@@ -1,6 +1,8 @@
 Welcome to my portfolio!
 =================
 
+Live @ [sammydods.me](sammydods.me)
+
 I created this portfolio website following along with this tutorial [video](https://www.youtube.com/watch?v=_xkSvufmjEs&list=PLttH_g5uIl1-uXbnKg3QqzqkqlhYFAOe8&index=2&t=4956s) from free code camp.
 
 I've personalized it and added things of my own but I could not have done it without that video. It was really interesting to
