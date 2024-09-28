@@ -105,8 +105,18 @@ strong {
 
 }
 
+.btn-portfolio {
+  margin-bottom: 1em;
+}
+
+
 .btn:hover {
   transform: scale(2);
+  text-decoration: none;
+}
+
+.btn-portfolio:hover {
+  transform: scale(1.1);
   text-decoration: none;
 }
 
@@ -345,12 +355,13 @@ header {
 
 .my-services {
   background-color: var(--clr-dark);
-  background-image: url("https://cdn.glitch.com/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab%2FTBayWalk.JPG?v=1602625991473");
+  background-image: url("https://cdn.glitch.global/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab/tbaywalk2.JPEG?v=1727553637301");
   background-size: cover;
+  background-position: left bottom;
   background-blend-mode: multiply;
   color: var(--clr-light);
   text-align: center;
-  display: none;
+  /* display: none; */
   
 }
 
@@ -371,7 +382,7 @@ header {
   opacity: 0.25;
   
 }
-
+/*
 .services {
   margin-bottom: 4em;
 }
@@ -394,6 +405,35 @@ header {
     margin-left: 2em;
     
   }
+}
+*/
+
+
+.services {
+  margin-bottom: 0em;
+  padding-bottom: 0;
+}
+.service {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  padding: 1em;
+  background:  rgba(0, 0, 0, .5);
+  border-radius: 10px;
+  position: relative;
+  
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.card-link:hover {
+  background:  rgba(0, 0, 0, .3);
 }
 
 .about-me {
@@ -471,6 +511,7 @@ header {
   background-color: var(--clr-dark);
   color: var(--clr-light);
   text-align: center;
+  display: none;
 
 }
 
@@ -481,6 +522,8 @@ header {
   background-color: var(--clr-light);
   color: var(--clr-dark);
   text-align: center;
+  display: none;
+
   
 }
 
