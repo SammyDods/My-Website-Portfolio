@@ -424,6 +424,10 @@ header {
   
 }
 
+.portfolio-project-title{
+  text-decoration: underline;
+}
+
 .card-link {
   position: absolute;
   top: 0;
@@ -439,7 +443,7 @@ header {
 .about-me {
   max-width: 1000px;
   margin: 0 auto;
-  padding-bottom: 0;
+  padding-bottom: 4em;
 }
 
 .about-me a{
@@ -618,6 +622,8 @@ header {
   justify-content: center;
   margin: 2em 0 0;
   padding: 0;
+  transform: scale(2);
+
 }
 
 .social-list__item {
