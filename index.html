@@ -7,17 +7,17 @@
 
     <meta property="og:title" content="Sammy Dods' Portfolio" />
     <meta property="og:description" content="My name is Sammy Dods, and I love to code. Check out my portfolio!" />
-    <meta property="og:image" content="https://cdn.glitch.com/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab%2FSammySqyare.png?v=1602623891894" />
+    <meta property="og:image" content="https://sammydods.me/assets/intro-photo.png" />
     <meta property="og:url" content="https://sammydods.me" />
     <meta property="og:locale" content="en_CA" />
     <meta property="og:site_name" content="htts://sammydods.me" />
     
     <title>Sammy Dods Portfolio</title>
     
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
     <!-- import the normalize stylesheet -->
-    <link rel = "stylesheet" href="/normalize.css">
+    <link rel = "stylesheet" href="normalize.css">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
     
     <!-- Import Google font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap">
@@ -30,7 +30,7 @@
   
     <header>
       <div class="logo">
-        <img src="https://cdn.glitch.com/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab%2FSammy%20Dods.png?v=1602637287284" alt="">
+        <a href="#home"><img src="assets/sammy-dods-logo.png" alt="Sammy Dods"></a>
       </div>
       <button class = "nav-toggle" aria-label="toggle navigation">
       <span class = "hamburger"></span>
@@ -42,6 +42,7 @@
           <!--<li class = "nav__item"><a href="#services" class = "nav__link">My Services</a></li>-->
           <li class = "nav__item"><a href="#about" class = "nav__link">About Me</a></li>
           <li class = "nav__item"><a href="#work" class = "nav__link">My Work</a></li>
+          <li class = "nav__item"><a href="#experiments" class = "nav__link">Experiments</a></li>
         </ul>
       </nav>
     </header>
@@ -57,7 +58,7 @@
         <p class = "section__subtitle section__subtitle--intro">
           developer
         </p>
-        <img src="https://cdn.glitch.global/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab/WebsiteSquarePhotoOfMe.png?v=1727633301123" class = "intro__img" alt= "a picture of Sammy smiling">
+        <img src="assets/intro-photo.png" class = "intro__img" alt= "a picture of Sammy smiling">
       </div>
       
     </section>
@@ -82,7 +83,7 @@
         
       </div>
     
-      <img src="https://cdn.glitch.global/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab/lookingatIsland.JPEG?v=1727633430433" class = "about-me__img" alt="Picture of me">      
+      <img src="assets/about-photo.jpg" class = "about-me__img" alt="Picture of me">      
       
     </section>
     
@@ -99,9 +100,7 @@
             Transpeak - Chrome Extension
           </h3>   
           <p>
-            At EngHacks 2022, my team and I developed a chrome extension with 10,000+ users and 
-            4 million+ monthly API calls on the chrome web store using Microsoft's Azure Translation
-            and Language Detection API.
+            Built a Chrome extension using Microsoft's Azure Translation and Language Detection APIs, reaching 10,000+ users and 4M+ monthly API calls.
           </p>
           <a href="Text-to-Speech-Highlighter.html" class="card-link"></a>
         </div> <!-- / service -->
@@ -138,6 +137,77 @@
     </section>
     
     
+    <!-- Fun Experiments -->
+
+    <section class="experiments" id="experiments">
+      <h2 class="section__title section__title--services">
+        Fun Experiments
+      </h2>
+      <p class="experiments__lede">
+        Small interactive toys — starting with a dragon curve L-system I wrote in Elm.
+      </p>
+
+      <div class="experiment">
+        <div class="experiment__copy">
+          <h3 class="portfolio-project-title">Dragon Curve</h3>
+          <p>
+            Interactive dragon curve generator implemented in
+            Elm, using functional
+            programming, an L-system, and turtle graphics.
+          </p>
+          <div class="l-system-rules">
+            <h4 class="l-system-rules__title">L-System Rules</h4>
+            <ul class="l-system-rules__list">
+              <li><code>Fwd1</code> <span aria-hidden="true">→</span> <code>Fwd1 Left Fwd2 Fwd3 Left</code></li>
+              <li><code>Fwd2</code> <span aria-hidden="true">→</span> <code>Right Fwd3 Fwd1 Right Fwd2</code></li>
+              <li><code>Fwd3</code> <span aria-hidden="true">→</span> <code>Fwd3</code></li>
+            </ul>
+          </div>
+          <div class="experiment__actions">
+            <a href="Dragon-Curve.html" class="btn btn-portfolio">Open full page</a>
+            <a
+              href="https://github.com/SammyDods/Dragon-Curve-Generator"
+              class="btn btn-portfolio btn-portfolio--ghost"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </div>
+        </div>
+        <div class="dragon-curve dragon-curve--embed">
+          <canvas
+            data-dragon-canvas
+            class="dragon-curve__canvas"
+            role="img"
+            aria-label="Interactive dragon curve"
+          ></canvas>
+          <div class="dragon-curve__controls">
+            <div class="dragon-curve__label">
+              Degree <span data-dragon-degree>5</span>
+            </div>
+            <div class="dragon-curve__degrees" role="group" aria-label="Curve degree">
+              <button type="button" data-dragon-set="0">0</button>
+              <button type="button" data-dragon-set="1">1</button>
+              <button type="button" data-dragon-set="2">2</button>
+              <button type="button" data-dragon-set="3">3</button>
+              <button type="button" data-dragon-set="4">4</button>
+              <button type="button" data-dragon-set="5" class="is-active">5</button>
+              <button type="button" data-dragon-set="6">6</button>
+              <button type="button" data-dragon-set="7">7</button>
+              <button type="button" data-dragon-set="8">8</button>
+              <button type="button" data-dragon-set="9">9</button>
+              <button type="button" data-dragon-set="10">10</button>
+              <button type="button" data-dragon-set="11">11</button>
+              <button type="button" data-dragon-set="12">12</button>
+              <button type="button" data-dragon-set="13">13</button>
+              <button type="button" data-dragon-set="14">14</button>
+              <button type="button" data-dragon-set="15">15</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <!-- Youtube Channel -->
 
 
@@ -164,23 +234,23 @@
       <div class = "portfolio"> 
          <!-- Portfolio item #1 -->
         <a href="Text-to-Speech-Highlighter.html" class = "portfolio__item">
-          <img src="https://cdn.glitch.global/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab/ChromeExtensionTitle.png?v=1659457590446" alt = "" class = "portfolio__img">
+          <img src="assets/chrome-extension-title.png" alt = "" class = "portfolio__img">
         </a>
         <!-- Portfolio item #2 -->
         <a href="Castle-Defense-Game.html" class = "portfolio__item">
-          <img src="https://cdn.glitch.com/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab%2F1.png?v=1625962429767" alt = "" class = "portfolio__img">
+          <img src="assets/castle-defence-game-title.png" alt = "" class = "portfolio__img">
         </a>
         <!-- Portfolio item #3 -->
         <a href="Lightcube.html" class = "portfolio__item">
-          <img src="https://cdn.glitch.com/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab%2F3.png?v=1603499489164" alt = "" class = "portfolio__img">
+          <img src="assets/lightcube-title.png" alt = "" class = "portfolio__img">
         </a>
         <!-- Portfolio item #4 -->
         <a href="Zombie-PyGame.html" class = "portfolio__item">
-          <img src="https://cdn.glitch.com/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab%2F2.png?v=1625962435908" alt = "" class = "portfolio__img">
+          <img src="assets/zombie-game-title.png" alt = "" class = "portfolio__img">
         </a>
         <!-- Portfolio item #5 -->
         <a href="https://devpost.com/sammysdods?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" class = "portfolio__item">
-          <img src="https://cdn.glitch.com/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab%2FCheckOutMyDevPost.png?v=1603502184947" alt = "" class = "portfolio__img">
+          <img src="assets/devpost-title.png" alt = "" class = "portfolio__img">
         </a>
           
       </div>
@@ -194,18 +264,19 @@
     
     <footer class = "footer">
       <a href = "mailto:sammysdods@gmail.com" class = "btn">Contact Me!</a>
-      <u1 class = "social-list">
-        <li class = "socail-list__item">
+      <ul class = "social-list">
+        <li class = "social-list__item">
           <a class = "social-list__link" href = "https://www.linkedin.com/in/sammy-dods/"><i class="fab fa-linkedin"></i></a></li>
-        <li class = "socail-list__item">
+        <li class = "social-list__item">
           <a class = "social-list__link" href = "https://github.com/SammyDods"><i class="fab fa-github"></i></a></li>
-        <li class = "socail-list__item">
+        <li class = "social-list__item">
           <a class = "social-list__link" href = "https://twitter.com/Sammy_Dods"><i class="fab fa-twitter"></i></a></li>
-      </u1>
+      </ul>
       
     </footer>
     
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="dragon-curve.js" defer></script>
   </body>
 </html>

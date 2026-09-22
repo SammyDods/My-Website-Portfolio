@@ -28,7 +28,7 @@
         0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
 
-@media (min-width 800px){
+@media (min-width: 800px){
   :root{
     --fs-h1: 4.5rem;
     --fs-h2: 3.75rem;
@@ -40,9 +40,8 @@
 /* General Styles */
 
 html {
-  
   scroll-behavior: smooth;
-  
+  overflow-x: hidden;
 }
 body {
   background: var(--clr-light);
@@ -51,7 +50,7 @@ body {
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
   line-height: 1.6;
-  
+  overflow-x: hidden;
 }
 
 section {
@@ -144,7 +143,7 @@ h3 { font-size: var(--fs-h3) }
 
 .section__title--intro strong{
   display: block;
-  var(--fw-bold);
+  font-weight: var(--fw-bold);
 }
 
 .section__subtitle {
@@ -177,8 +176,16 @@ header {
   padding: 1em;
 }
 .logo {
-  max-width: 100px;
-  
+  max-width: 160px;
+}
+
+.logo a {
+  display: block;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
 }
 
 .nav {
@@ -264,9 +271,8 @@ header {
   background: var(--clr-accent);
   width: 2em;
   height: 3px;
-  border-radius 1em;
+  border-radius: 1em;
   transition: transform 250ms ease-in-out;
-  
 }
 .hamburger::before,
 .hamburger::after {
@@ -292,19 +298,25 @@ header {
   color: var(--clr-light);
   
   background-color: var(--clr-dark);
-  background-image: url("https://cdn.glitch.com/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab%2FTBayWalk.JPG?v=1602625991473");
+  background-image: linear-gradient(160deg, rgba(48, 48, 48, 0.92), rgba(20, 40, 55, 0.88));
   background-size: cover;
-  background-blend-mode: multiply;
+  background-position: center;
 }
 
-.intro-zombie { background-image: url("https://cdn.glitch.com/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab%2F2-2.png?v=1603480103845");}
+.intro-zombie { background-image: url("assets/zombie-game-title.png");}
 
-.intro-castle { background-image: url("https://cdn.glitch.com/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab%2FCopy%20of%20Grade%2011%20Unity%20Castle%20Game%20Live%20Version.png?v=1603493809178");}
+.intro-castle { background-image: url("assets/castle-defence-game-title.png");}
 
-.intro-lightcube{ background-image: url("https://cdn.glitch.com/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab%2FLightCube.jpeg?v=1603499474800");}
+.intro-lightcube{ background-image: url("assets/lightcube-title.png");}
+
+.intro-text-highlighter { background-image: url("assets/transpeak-thumbnail.png");}
 
 .intro__img {
   box-shadow: var(--bs);
+  width: 250px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
 }
 
 .section__subtitle--intro {
@@ -355,14 +367,11 @@ header {
 
 .my-services {
   background-color: var(--clr-dark);
-  background-image: url("https://cdn.glitch.global/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab/tbaywalk2.JPEG?v=1727553637301");
+  background-image: linear-gradient(180deg, rgba(20, 30, 40, 0.92), rgba(48, 48, 48, 0.9));
   background-size: cover;
   background-position: left bottom;
-  background-blend-mode: multiply;
   color: var(--clr-light);
   text-align: center;
-  /* display: none; */
-  
 }
 
 .section__title--services {
@@ -412,16 +421,31 @@ header {
 .services {
   margin-bottom: 0em;
   padding-bottom: 0;
+  display: grid;
+  gap: 2em;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .service {
   max-width: 500px;
   margin: 0 auto;
-  margin-bottom: 2em;
   padding: 1em;
   background:  rgba(0, 0, 0, .5);
   border-radius: 10px;
   position: relative;
-  
+}
+
+@media (min-width: 800px) {
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service {
+    max-width: none;
+    margin: 0;
+  }
 }
 
 .portfolio-project-title{
@@ -462,7 +486,10 @@ header {
 
 .about-me__img {
   box-shadow: var(--bs);
-  
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
 }
 
 @media (min-width: 600px) {
@@ -477,20 +504,22 @@ header {
     grid-column-gap: 2em;
   }
   
-  .section__title-about,
-  .section__subtitle--about {
+  .section__title--about {
     grid-area: title;
-    
   }
   
   .section__subtitle--about {
-    grid-column: 1/ -1;
-    grid-row: 2;
+    grid-area: subtitle;
+    grid-column: 1 / -1;
     position: relative;
     left: -1em;
     width: calc(100% + 2em);
     padding-left: 1em;
     padding-right: calc(200px + 4em);
+  }
+
+  .about-me__body {
+    grid-area: text;
   }
   
   .about-me__img {
@@ -500,15 +529,12 @@ header {
   }
   
   .about-me a{
-  
-  grid-area: btn;
-  width: 40%;
-  display: block;
-  justify-self: center;
-  text-align: center;
-  
-  
-}
+    grid-area: btn;
+    width: 40%;
+    display: block;
+    justify-self: center;
+    text-align: center;
+  }
 }
 
 .youtube {
@@ -554,12 +580,11 @@ header {
   color: var(--clr-light);
   text-decoration: none;
   border-radius: 1em;
-  background-image: url(https://cdn.glitch.com/df0c659b-37f6-4dc5-8ec5-f37ac23a54ab%2Fgoat2.png?v=1602631926224);
   background-size: cover;
   background-repeat: none;
-    transition: 
-    transform: 750ms cubic-bezier(.5, 0, .5, 1),
-    opacity: 250 ms linear;
+  transition: 
+    transform 750ms cubic-bezier(.5, 0, .5, 1),
+    opacity 250ms linear;
 }
 
 .portfolio__object:hover {
@@ -572,9 +597,8 @@ header {
   vertical-align: middle;
   z-index: 15;
   transition: 
-    transform: 750ms cubic-bezier(.5, 0, .5, 1),
-    opacity: 250 ms linear;
-  
+    transform 750ms cubic-bezier(.5, 0, .5, 1),
+    opacity 250ms linear;
 }
 
 .portfolio__item:focus {
@@ -622,8 +646,7 @@ header {
   justify-content: center;
   margin: 2em 0 0;
   padding: 0;
-  transform: scale(2);
-
+  font-size: 2em;
 }
 
 .social-list__item {
@@ -636,7 +659,7 @@ header {
 
 .portfolio-item-individual {
   padding: 0 2em 2em;
-  max-width 1000px;
+  max-width: 1000px;
   margin: 0 auto;
 
 }
@@ -674,4 +697,204 @@ header {
     margin-right: auto;
   
   
+}
+
+/* Fun Experiments */
+
+.experiments {
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  text-align: center;
+}
+
+.experiments .section__title--services {
+  color: var(--clr-dark);
+}
+
+.experiments .section__title--services::after {
+  background: var(--clr-dark);
+}
+
+.experiments__lede {
+  max-width: 36em;
+  margin: 0 auto 2.5em;
+  font-size: 1.05rem;
+}
+
+.experiment {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2em;
+  text-align: left;
+  align-items: center;
+}
+
+.experiment__copy .btn {
+  margin-top: 0;
+}
+
+.experiment__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  margin-top: 1.25em;
+}
+
+.btn-portfolio--ghost {
+  background: transparent;
+  color: var(--clr-dark) !important;
+  box-shadow: inset 0 0 0 2px var(--clr-accent);
+}
+
+.btn-portfolio--ghost:hover {
+  background: var(--clr-accent);
+}
+
+.l-system-rules {
+  margin: 1.25em 0 0;
+  padding: 1em 1.15em;
+  background: #1a1a1a;
+  color: #f0f0f0;
+  border-radius: 8px;
+  border-left: 4px solid var(--clr-accent);
+  text-align: left;
+}
+
+.l-system-rules--centered {
+  max-width: 32em;
+  margin: 2em auto 0;
+}
+
+.l-system-rules__title {
+  margin: 0 0 0.65em;
+  font-family: var(--ff-secondary);
+  font-size: 0.85rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+}
+
+.l-system-rules__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55em;
+  font-family: var(--ff-secondary);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.l-system-rules__list li {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 0.55em;
+  align-items: baseline;
+}
+
+.l-system-rules__list code {
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  padding: 0;
+  color: #fff;
+}
+
+.l-system-rules__list li > span {
+  color: var(--clr-accent);
+  font-weight: var(--fw-bold);
+}
+
+@media (min-width: 800px) {
+  .experiment {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+}
+
+.intro-dragon {
+  background-image: linear-gradient(160deg, #1a242e 0%, #303030 55%, #3a2030 100%);
+}
+
+.intro-dragon .intro-content {
+  width: auto;
+  max-width: 40rem;
+  display: block;
+  text-align: center;
+}
+
+.intro-dragon .section__subtitle--intro {
+  left: 0;
+  width: auto;
+  text-align: center;
+}
+
+.dragon-curve {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--bs);
+}
+
+.dragon-curve__canvas {
+  display: block;
+  width: 100%;
+  height: 320px;
+  background:
+    radial-gradient(ellipse at center, rgba(123, 197, 226, 0.08), transparent 65%),
+    #141414;
+}
+
+.dragon-curve__controls {
+  padding: 0.85em 1em 1.1em;
+  background: rgb(150, 150, 200);
+  color: var(--clr-dark);
+}
+
+.dragon-curve__label {
+  font-family: var(--ff-secondary);
+  font-size: 0.95rem;
+  font-weight: var(--fw-bold);
+  margin-bottom: 0.65em;
+  text-align: center;
+}
+
+.dragon-curve__degrees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35em;
+}
+
+.dragon-curve__degrees button {
+  min-width: 2.1em;
+  padding: 0.35em 0.45em;
+  border: 0;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--clr-dark);
+  font-family: var(--ff-secondary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.dragon-curve__degrees button:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.dragon-curve__degrees button.is-active {
+  background: var(--clr-dark);
+  color: var(--clr-accent);
+  font-weight: var(--fw-bold);
+}
+
+.portfolio-item-individual code {
+  font-family: var(--ff-secondary);
+  font-size: 0.9em;
+  background: rgba(123, 197, 226, 0.2);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
 }
