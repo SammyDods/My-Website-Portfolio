@@ -76,10 +76,8 @@
       </p>
       <div class= "about-me__body">
         <p>
-        5th year computer science student at McMaster University and<strong class = "about-me-strong"> currently open to SWE opportunities.</strong></p>
-        
-        <p>
-        Profecient with languages such as <strong class = "about-me-strong">Python, Java, C++, C#, Javascript, HTML, CSS </strong> and technologies like <strong class = "about-me-strong">Node.js, Django, Flask, Flutter, OpenGL, Selenium, Git and Linux.</strong> </p>
+          Software Engineer at Engage Spaces and McMaster University Computer Science graduate. I build full-stack applications, love solving challenging technical problems and learning new technologies.
+        </p>
         
       </div>
     
@@ -152,25 +150,6 @@
           </div>
           <a href="Lightcube.html" class="card-link" aria-label="View LightCube project"></a>
         </article>
-        <article class = "service">
-          <img
-            class="service__img"
-            src="assets/zombie-game-title.png"
-            alt=""
-          >
-          <div class="service__body">
-            <p class="service__tag">Python · PyGame</p>
-            <h3 class="service__title">
-              Zombie Survival
-            </h3>
-            <p>
-              Top-down zombie survival game built with Python and the PyGame
-              engine.
-            </p>
-            <span class="service__cta">View project</span>
-          </div>
-          <a href="Zombie-PyGame.html" class="card-link" aria-label="View Zombie Survival project"></a>
-        </article>
       </div> <!-- close services -->
       
       
@@ -184,10 +163,43 @@
         Fun Experiments
       </h2>
       <p class="experiments__lede">
-        Small interactive toys — starting with a dragon curve L-system I wrote in Elm.
+        Interactive toys and games — an Elm dragon curve, plus a PyGame zombie
+        shooter you can play in the browser.
       </p>
 
       <div class="experiment">
+        <div class="experiment__copy">
+          <h3 class="portfolio-project-title">Zombinator</h3>
+          <p class="experiment__tag">Python · PyGame · itch.io</p>
+          <p>
+            A grade-10 shooter/strategy survival game ported to the web. Fight
+            endless zombie waves, earn cash, and upgrade your suit and buildings.
+            WASD to move, mouse to shoot, Q to interact, P to pause.
+          </p>
+          <div class="experiment__actions">
+            <a
+              href="https://sammydods.itch.io/zombinator"
+              class="btn btn-portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Play on itch.io</a
+            >
+            <a href="Zombie-PyGame.html" class="btn btn-portfolio btn-portfolio--ghost"
+              >Project page</a
+            >
+          </div>
+        </div>
+        <div
+          class="itch-embed itch-embed--game"
+          data-itch-src="https://itch.io/embed-upload/19356712?color=333333"
+        >
+          <button type="button" class="itch-embed__play" aria-label="Play Zombinator">
+            <span class="itch-embed__play-label">Play</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="experiment experiment--spaced">
         <div class="experiment__copy">
           <h3 class="portfolio-project-title">Dragon Curve</h3>
           <p>
@@ -285,7 +297,7 @@
           <img src="assets/lightcube-title.png" alt = "" class = "portfolio__img">
         </a>
         <!-- Portfolio item #4 -->
-        <a href="Zombie-PyGame.html" class = "portfolio__item">
+        <a href="https://sammydods.itch.io/zombinator" class = "portfolio__item" target="_blank" rel="noopener noreferrer">
           <img src="assets/zombie-game-title.png" alt = "" class = "portfolio__img">
         </a>
         <!-- Portfolio item #5 -->
