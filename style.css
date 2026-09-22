@@ -366,12 +366,40 @@ header {
 /* My Services */
 
 .my-services {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background-color: var(--clr-dark);
-  background-image: linear-gradient(180deg, rgba(20, 30, 40, 0.92), rgba(48, 48, 48, 0.9));
-  background-size: cover;
-  background-position: left bottom;
   color: var(--clr-light);
   text-align: center;
+}
+
+.my-services__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.my-services__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.05) brightness(0.55);
+}
+
+.my-services__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(18, 22, 28, 0.72) 0%, rgba(18, 22, 28, 0.55) 45%, rgba(18, 22, 28, 0.82) 100%);
+}
+
+.my-services__content {
+  position: relative;
+  z-index: 1;
 }
 
 .section__title--services {
@@ -391,55 +419,28 @@ header {
   opacity: 0.25;
   
 }
-/*
+
 .services {
-  margin-bottom: 4em;
-}
-.service {
-  max-width: 500px;
   margin: 0 auto;
-}
-
-@media (min-width: 800px) {
-  .services {
-    display: flex;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    
-    
-  }
-  
-  .service + .service {
-    margin-left: 2em;
-    
-  }
-}
-*/
-
-
-.services {
-  margin-bottom: 0;
   padding-bottom: 0;
   display: grid;
+  grid-template-columns: 1fr;
   gap: 1.5em;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 920px;
 }
 
 .service {
   margin: 0;
   padding: 0;
-  background: rgba(12, 12, 14, 0.72);
-  border: 1px solid rgba(123, 197, 226, 0.18);
+  background: rgba(12, 12, 14, 0.82);
+  border: 1px solid rgba(123, 197, 226, 0.22);
   border-radius: 12px;
   position: relative;
   overflow: hidden;
   text-align: left;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  backdrop-filter: blur(6px);
   transition:
     transform 200ms ease,
     border-color 200ms ease,
@@ -459,9 +460,32 @@ header {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 1.15em 1.25em 1.35em;
+  padding: 1.25em 1.4em 1.45em;
   gap: 0.55em;
   text-align: left;
+}
+
+@media (min-width: 700px) {
+  .services {
+    max-width: 980px;
+    gap: 1.75em;
+  }
+
+  .service {
+    grid-template-columns: minmax(240px, 0.95fr) minmax(0, 1.2fr);
+    align-items: stretch;
+  }
+
+  .service__img {
+    height: 100%;
+    aspect-ratio: auto;
+    min-height: 200px;
+  }
+
+  .service__body {
+    justify-content: center;
+    padding: 1.5em 1.75em;
+  }
 }
 
 .service__tag {
@@ -500,13 +524,6 @@ header {
 
 .service__cta::after {
   content: " →";
-}
-
-@media (min-width: 800px) {
-  .services {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.75em;
-  }
 }
 
 .portfolio-project-title{
