@@ -419,32 +419,93 @@ header {
 
 
 .services {
-  margin-bottom: 0em;
+  margin-bottom: 0;
   padding-bottom: 0;
   display: grid;
-  gap: 2em;
+  gap: 1.5em;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .service {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 1em;
-  background:  rgba(0, 0, 0, .5);
-  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  background: rgba(12, 12, 14, 0.72);
+  border: 1px solid rgba(123, 197, 226, 0.18);
+  border-radius: 12px;
   position: relative;
+  overflow: hidden;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.service__img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  background: #111;
+  transition: transform 350ms ease;
+}
+
+.service__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.15em 1.25em 1.35em;
+  gap: 0.55em;
+  text-align: left;
+}
+
+.service__tag {
+  margin: 0;
+  font-family: var(--ff-secondary);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+}
+
+.service__title {
+  margin: 0;
+  color: var(--clr-light);
+  line-height: 1.2;
+  text-decoration: none;
+  font-size: var(--fs-h3);
+}
+
+.service__body > p:not(.service__tag) {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.service__cta {
+  margin-top: 0.5em;
+  font-family: var(--ff-secondary);
+  font-size: 0.85rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent);
+  letter-spacing: 0.02em;
+}
+
+.service__cta::after {
+  content: " →";
 }
 
 @media (min-width: 800px) {
   .services {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .service {
-    max-width: none;
-    margin: 0;
+    gap: 1.75em;
   }
 }
 
@@ -454,14 +515,29 @@ header {
 
 .card-link {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  inset: 0;
+  z-index: 2;
+}
+
+.service:hover,
+.service:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(123, 197, 226, 0.55);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.service:hover .service__img,
+.service:focus-within .service__img {
+  transform: scale(1.03);
+}
+
+.service:hover .service__cta,
+.service:focus-within .service__cta {
+  text-decoration: underline;
 }
 
 .card-link:hover {
-  background:  rgba(0, 0, 0, .3);
+  background: transparent;
 }
 
 .about-me {
