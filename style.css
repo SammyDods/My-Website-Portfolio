@@ -80,6 +80,10 @@ strong {
 }
 
 :focus {
+  outline: none;
+}
+
+:focus-visible {
   outline: 3px solid var(--clr-accent);
   outline-offset: 3px;
 }
@@ -110,7 +114,7 @@ strong {
 
 
 .btn:hover {
-  transform: scale(2);
+  transform: scale(1.05);
   text-decoration: none;
 }
 
@@ -298,7 +302,9 @@ header {
   color: var(--clr-light);
   
   background-color: var(--clr-dark);
-  background-image: linear-gradient(160deg, rgba(48, 48, 48, 0.92), rgba(20, 40, 55, 0.88));
+  background-image:
+    linear-gradient(160deg, rgba(20, 24, 28, 0.78), rgba(12, 14, 18, 0.88)),
+    url("assets/bridge.JPEG");
   background-size: cover;
   background-position: center;
 }
@@ -310,6 +316,14 @@ header {
 .intro-lightcube{ background-image: url("assets/lightcube-title.png");}
 
 .intro-text-highlighter { background-image: url("assets/transpeak-thumbnail.png");}
+
+.intro-rooms4rent {
+  background-image:
+    linear-gradient(160deg, rgba(20, 24, 28, 0.82), rgba(12, 14, 18, 0.9)),
+    url("assets/rooms4rent-title.png");
+  background-size: cover;
+  background-position: center;
+}
 
 .intro__img {
   box-shadow: var(--bs);
@@ -563,19 +577,15 @@ header {
   padding-bottom: 4em;
 }
 
-.about-me a{
-  
-  margin: 2.5em;
-  color: inherit;
-  text-decoration: none;
-  width: 40%;
-  display: block;
-  margin-right: auto !important;
-  margin-left: auto !important;
-  text-align: center !important;
-  
+.about-me__socials {
+  margin: 2em 0 0;
+  color: var(--clr-dark);
+  font-size: 1.75em;
 }
 
+.about-me__socials .social-list__link {
+  color: inherit;
+}
 
 .about-me__img {
   box-shadow: var(--bs);
@@ -593,7 +603,7 @@ header {
       "title img"
       "subtitle img"
       "text img"
-      "btn btn";
+      "socials socials";
     grid-column-gap: 2em;
   }
   
@@ -620,13 +630,11 @@ header {
     position: relative;
     z-index: 2;
   }
-  
-  .about-me a{
-    grid-area: btn;
-    width: 40%;
-    display: block;
+
+  .about-me__socials {
+    grid-area: socials;
     justify-self: center;
-    text-align: center;
+    margin-top: 1.5em;
   }
 }
 
@@ -773,6 +781,27 @@ header {
   margin-left: auto;
 }
 
+.slides-embed {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 2em auto 0;
+  aspect-ratio: 960 / 569;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--bs);
+  background: #111;
+}
+
+.slides-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 .portfolio-item-links {
   
     display: flex;
@@ -825,6 +854,47 @@ header {
 
 .experiment--spaced {
   margin-top: 3.5em;
+}
+
+.experiment__media {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--bs);
+  border: 1px solid rgba(48, 48, 48, 0.9);
+  background: #111;
+}
+
+.experiment__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 350ms ease;
+}
+
+.experiment__media:hover img {
+  transform: scale(1.03);
+}
+
+.project-detail__heading {
+  margin: 1.75em auto 0.5em;
+  max-width: 600px;
+  text-align: left;
+  font-size: var(--fs-h3);
+}
+
+.project-detail__list {
+  max-width: 600px;
+  margin: 0 auto 1em;
+  padding-left: 1.25em;
+  text-align: left;
+  line-height: 1.55;
+}
+
+.project-detail__list li + li {
+  margin-top: 0.35em;
 }
 
 .experiment__tag {

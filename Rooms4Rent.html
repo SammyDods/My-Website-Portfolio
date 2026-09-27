@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="og:title" content="Zombinator — Sammy Dods" />
+    <meta property="og:title" content="rooms4rent — Sammy Dods" />
     <meta
       property="og:description"
-      content="A shooter/strategy zombie game built with PyGame, playable in the browser on itch.io."
+      content="Full-stack rental platform connecting landlords and renters — React, Go, PostgreSQL, MongoDB, and Docker."
     />
     <meta
       property="og:image"
-      content="https://sammydods.me/assets/zombie-game-title.png"
+      content="https://sammydods.me/assets/rooms4rent-title.png"
     />
-    <meta property="og:url" content="https://sammydods.me/Zombie-PyGame.html" />
+    <meta property="og:url" content="https://sammydods.me/Rooms4Rent.html" />
     <meta property="og:locale" content="en_CA" />
     <meta property="og:site_name" content="https://sammydods.me" />
 
-    <title>Zombinator</title>
+    <title>rooms4rent</title>
     <link rel="icon" href="assets/favicon.png" type="image/png" />
 
     <link rel="stylesheet" href="normalize.css" />
@@ -60,85 +60,81 @@
       </nav>
     </header>
 
-    <section class="intro intro-zombie" id="home">
+    <section class="intro intro-rooms4rent" id="home">
       <div class="intro-content">
         <h1 class="section__title section__title--intro">
-          <strong>Zombinator</strong>
+          <strong>rooms4rent</strong>
         </h1>
         <p class="section__subtitle section__subtitle--intro">
-          PyGame · playable on itch.io
+          full-stack rental platform
         </p>
         <img
-          src="assets/zombie-thumbnail.png"
+          src="assets/rooms4rent-title.png"
           class="intro__img"
-          alt="Zombinator game title art"
+          alt="rooms4rent logo"
         />
       </div>
     </section>
 
     <div class="portfolio-item-individual">
       <p>
-        A shooter/strategy zombie game I made in grade 10 using the PyGame
-        Python module — now playable in the browser on
-        <a href="https://sammydods.itch.io/zombinator">itch.io</a>.
+        <strong class="about-me-strong">rooms4rent</strong> is a full-stack web
+        application that connects landlords and renters in a simple, streamlined
+        platform. Landlords can post and manage property listings, while renters
+        can browse available rooms, submit applications, and leave reviews after
+        their stay.
       </p>
 
-      <div
-        class="itch-embed itch-embed--game itch-embed--page"
-        data-itch-src="https://itch.io/embed-upload/19356712?color=333333"
-      >
-        <button type="button" class="itch-embed__play" aria-label="Play Zombinator">
-          <span class="itch-embed__play-label">Play</span>
-        </button>
-      </div>
+      <img
+        class="portfolio-item-individual__img"
+        src="assets/capstone-bristol-board-poster.png"
+        alt="rooms4rent capstone bristol board poster"
+      />
 
-      <p class="itch-embed__hint">
-        Press Play to load the game. WASD move · mouse shoot · Q interact · P
-        pause.
+      <h3 class="project-detail__heading">My Contribution</h3>
+      <p>
+        Built the user profile functionality across the React frontend and Go
+        backend, working with PostgreSQL and MongoDB for profile data and
+        integrating the frontend with the REST API.
       </p>
 
-      <div class="itch-widget">
-        <iframe
-          title="Zombinator on itch.io"
-          frameborder="0"
-          src="https://itch.io/embed/5041196?border_width=0&amp;bg_color=141414&amp;fg_color=ffffff&amp;link_color=7bc5e2&amp;border_color=303030"
-        ></iframe>
-      </div>
+      <h3 class="project-detail__heading">Features</h3>
+      <ul class="project-detail__list">
+        <li>User authentication with roles: Renter, Landlord, or Both</li>
+        <li>Landlord dashboard with listing management</li>
+        <li>Renter dashboard with recommended and previously viewed properties</li>
+        <li>Applicants view for landlords</li>
+        <li>Profile customization with profile pictures and bio</li>
+        <li>Responsive UI built with React</li>
+      </ul>
+
+      <h3 class="project-detail__heading">Tech Stack</h3>
+      <ul class="project-detail__list">
+        <li><strong class="about-me-strong">Frontend:</strong> React, CSS</li>
+        <li><strong class="about-me-strong">Backend:</strong> Go (Golang)</li>
+        <li>
+          <strong class="about-me-strong">Database:</strong> PostgreSQL, MongoDB
+        </li>
+        <li><strong class="about-me-strong">Containerization:</strong> Docker</li>
+        <li>
+          <strong class="about-me-strong">API:</strong> REST with JSON
+        </li>
+      </ul>
+
+      <img
+        class="portfolio-item-individual__img"
+        src="assets/capstone-team-selfie.JPEG"
+        alt="rooms4rent capstone team"
+      />
 
       <p>
-        This is a rough-around-the-edges project I started and finished in the
-        last week of my grade 10 winter break for a final. I learned a lot about
-        object-oriented programming along the way.
-      </p>
-      <p>
-        Sprite animation, movement, and bullets were adapted from
-        <a href="http://programarcadegames.com/index.php"
-          >programarcadegames.com</a
-        >. Music: NCS — Chasing Ghosts.
-      </p>
-      <p>
-        Survive endless zombie waves as a space marine. Earn cash to buy suit
-        upgrades and buildings (banks for passive income, walls for defense).
-        Harder zombies — and tanks — spawn as waves progress.
+        Source and hosted demo are currently private — built as a capstone with
+        Docker Compose (frontend, Go backend, PostgreSQL, and MongoDB).
       </p>
     </div>
 
     <div class="portfolio-item-links">
-      <a
-        href="https://sammydods.itch.io/zombinator"
-        class="btn btn-portfolio"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Play on itch.io</a
-      >
-      <a
-        href="https://github.com/SammyDods/Zombie-PyGame"
-        class="btn btn-portfolio"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Source</a
-      >
-      <a href="index.html#experiments" class="btn btn-portfolio">Back</a>
+      <a href="index.html#work" class="btn btn-portfolio">Back</a>
     </div>
 
     <footer class="footer">

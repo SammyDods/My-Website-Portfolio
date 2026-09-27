@@ -13,6 +13,7 @@
     <meta property="og:site_name" content="htts://sammydods.me" />
     
     <title>Sammy Dods Portfolio</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
     
     <!-- import the normalize stylesheet -->
     <link rel = "stylesheet" href="normalize.css">
@@ -38,11 +39,9 @@
 
       <nav class = "nav">
         <ul class = "nav__list">
-          <li class = "nav__item"><a href="#home" class = "nav__link">Home</a></li>
-          <!--<li class = "nav__item"><a href="#services" class = "nav__link">My Services</a></li>-->
-          <li class = "nav__item"><a href="#about" class = "nav__link">About Me</a></li>
-          <li class = "nav__item"><a href="#work" class = "nav__link">My Work</a></li>
-          <li class = "nav__item"><a href="#experiments" class = "nav__link">Experiments</a></li>
+          <li class = "nav__item"><a href="#about" class = "nav__link">Who I am</a></li>
+          <li class = "nav__item"><a href="#work" class = "nav__link">Projects</a></li>
+          <li class = "nav__item"><a href="#experiments" class = "nav__link">Fun Experiments</a></li>
         </ul>
       </nav>
     </header>
@@ -56,7 +55,7 @@
             Hi, I'm <strong> Sammy Dods </strong> 
         </h1>
         <p class = "section__subtitle section__subtitle--intro">
-          developer
+          software developer
         </p>
         <img src="assets/intro-photo.png" class = "intro__img" alt= "a picture of Sammy smiling">
       </div>
@@ -72,16 +71,28 @@
       </h2>
       
       <p class = "section__subtitle section__subtitle--about">
-        Problem Solver
+        Problem Solver · Builder
       </p>
       <div class= "about-me__body">
         <p>
-          Software Engineer at Engage Spaces and McMaster University Computer Science graduate. I build full-stack applications, love solving challenging technical problems and learning new technologies.
+          Software Developer at Engage Spaces and McMaster University Computer Science graduate. I build full-stack applications, love solving challenging technical problems and learning new technologies.
         </p>
         
       </div>
     
-      <img src="assets/about-photo.jpg" class = "about-me__img" alt="Picture of me">      
+      <img src="assets/about-photo.jpg" class = "about-me__img" alt="Picture of me">
+
+      <ul class="social-list about-me__socials">
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://www.linkedin.com/in/sammy-dods/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://github.com/SammyDods" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://twitter.com/Sammy_Dods" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </li>
+      </ul>
       
     </section>
     
@@ -103,7 +114,7 @@
 
       <div class="my-services__content">
         <h2 class = "section__title section__title--services">
-         Previous Projects
+         Projects
         </h2>
         
         <div class = "services">
@@ -120,7 +131,7 @@
               </h3>
               <p>
                 Chrome extension with 10,000+ users and 4M+ monthly API calls,
-                powered by Microsoft Azure Translation and Language Detection.
+                developed with JavaScript and Microsoft Azure Translation and Language Detection APIs.
               </p>
               <span class="service__cta">View project</span>
             </div>
@@ -129,21 +140,24 @@
           <article class = "service">
             <img
               class="service__img"
-              src="assets/castle-defence-game-title.png"
+              src="assets/rooms4rent-title.png"
               alt=""
             >
             <div class="service__body">
-              <p class="service__tag">C# · Unity</p>
+              <p class="service__tag">React · Go · PostgreSQL · MongoDB · Docker</p>
               <h3 class="service__title">
-                Castle Defense Game
+                rooms4rent
               </h3>
               <p>
-                Real-time strategy kingdom defense game built with C# and the
-                Unity game engine.
+                Full-stack rental platform connecting landlords and renters —
+                listings, applications, reviews, and role-based dashboards. 
+                <br><br>
+                My contribution: Built the user profile functionality across the React frontend and Go backend, 
+                working with PostgreSQL and MongoDB for profile data and integrating the frontend with the REST API.
               </p>
               <span class="service__cta">View project</span>
             </div>
-            <a href="Castle-Defense-Game.html" class="card-link" aria-label="View Castle Defense Game project"></a>
+            <a href="Rooms4Rent.html" class="card-link" aria-label="View rooms4rent project"></a>
           </article>
         </div>
       </div>
@@ -156,19 +170,15 @@
       <h2 class="section__title section__title--services">
         Fun Experiments
       </h2>
-      <p class="experiments__lede">
-        Interactive toys and games — an Elm dragon curve, plus a PyGame zombie
-        shooter you can play in the browser.
-      </p>
 
       <div class="experiment">
         <div class="experiment__copy">
           <h3 class="portfolio-project-title">Zombinator</h3>
           <p class="experiment__tag">Python · PyGame · itch.io</p>
           <p>
-            A grade-10 shooter/strategy survival game ported to the web. Fight
-            endless zombie waves, earn cash, and upgrade your suit and buildings.
-            WASD to move, mouse to shoot, Q to interact, P to pause.
+            A zombie survival game originally built with Python and PyGame and later ported to the web. 
+            Fight endless zombie waves, earn cash, and upgrade your suit and buildings.
+            WASD to move · Mouse to shoot · Q to interact · P to pause
           </p>
           <div class="experiment__actions">
             <a
@@ -192,6 +202,37 @@
           </button>
         </div>
       </div>
+
+      <!--
+      <div class="experiment experiment--spaced">
+        <div class="experiment__copy">
+          <h3 class="portfolio-project-title">Castle Defense Game</h3>
+          <p class="experiment__tag">C# · Unity</p>
+          <p>
+            A real-time strategy game where you build farms, houses, and archer towers 
+            to grow your kingdom and defend against waves of goblins.
+          </p>
+          <div class="experiment__actions">
+            <a href="Castle-Defense-Game.html" class="btn btn-portfolio"
+              >Project page</a
+            >
+            <a
+              href="https://sammydods.github.io/Grade-11-Castle-Game-Live-Version/"
+              class="btn btn-portfolio btn-portfolio--ghost"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Play live</a
+            >
+          </div>
+        </div>
+        <a href="Castle-Defense-Game.html" class="experiment__media">
+          <img
+            src="assets/castle-thumbnail.png"
+            alt="Castle Defense Game screenshot"
+          >
+        </a>
+      </div>
+      -->
 
       <div class="experiment experiment--spaced">
         <div class="experiment__copy">
@@ -283,9 +324,15 @@
           <img src="assets/chrome-extension-title.png" alt = "" class = "portfolio__img">
         </a>
         <!-- Portfolio item #2 -->
-        <a href="Castle-Defense-Game.html" class = "portfolio__item">
-          <img src="assets/castle-defence-game-title.png" alt = "" class = "portfolio__img">
+        <a href="Rooms4Rent.html" class = "portfolio__item">
+          <img src="assets/rooms4rent-title.png" alt = "" class = "portfolio__img">
         </a>
+        <!-- Portfolio item #3 -->
+        <!--
+        <a href="Castle-Defense-Game.html" class = "portfolio__item">
+          <img src="assets/castle-thumbnail.png" alt = "" class = "portfolio__img">
+        </a>
+        -->
         <!-- Portfolio item #3 -->
         <a href="Lightcube.html" class = "portfolio__item">
           <img src="assets/lightcube-title.png" alt = "" class = "portfolio__img">
@@ -310,15 +357,6 @@
     
     <footer class = "footer">
       <a href = "mailto:sammysdods@gmail.com" class = "btn">Contact Me!</a>
-      <ul class = "social-list">
-        <li class = "social-list__item">
-          <a class = "social-list__link" href = "https://www.linkedin.com/in/sammy-dods/"><i class="fab fa-linkedin"></i></a></li>
-        <li class = "social-list__item">
-          <a class = "social-list__link" href = "https://github.com/SammyDods"><i class="fab fa-github"></i></a></li>
-        <li class = "social-list__item">
-          <a class = "social-list__link" href = "https://twitter.com/Sammy_Dods"><i class="fab fa-twitter"></i></a></li>
-      </ul>
-      
     </footer>
     
     <!-- import the webpage's javascript file -->
